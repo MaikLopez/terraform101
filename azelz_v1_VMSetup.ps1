@@ -10,7 +10,7 @@ choco install sysinternals -y
 choco install bginfo -y
 #Download Scripts to Set the rest of the Domain up when logged in
 New-Item -Path "c:\" -Name "BaselabSetup" -ItemType "directory" -Force
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/maiklopez/terraform101/main/PowerShell/aelz_v1_DomainSetup.ps1" -OutFile "C:\BaselabSetup\baselab_DomainSetup.ps1"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MaikLopez/terraform101/main/Powershell/aelz_v1_DomainSetup.ps1" -OutFile "C:\BaselabSetup\baselab_DomainSetup.ps1"
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MaikLopez/terraform101/main/Powershell/aelz_v1_LabStructure.ps1" -OutFile "C:\BaselabSetup\baselab_LabStructure.ps1"
 #Setup and Partition Data Disk
 Get-Disk | Where partitionstyle -eq 'raw' | Initialize-Disk -PartitionStyle MBR -PassThru | New-Partition -AssignDriveLetter -UseMaximumSize | Format-Volume -FileSystem NTFS -NewFileSystemLabel 'Data' -Confirm:$false 
