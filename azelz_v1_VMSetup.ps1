@@ -8,6 +8,7 @@ choco install notepadplusplus -y
 choco install winscp -y
 choco install sysinternals -y
 choco install bginfo -y
+choco install vscode -y
 #Download Scripts to Set the rest of the Domain up when logged in
 New-Item -Path "c:\" -Name "BaselabSetup" -ItemType "directory" -Force
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MaikLopez/terraform101/main/Powershell/aelz_v1_DomainSetup.ps1" -OutFile "C:\BaselabSetup\baselab_DomainSetup.ps1"
